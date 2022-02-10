@@ -1,1 +1,73 @@
 website link for practicing test automation: https://testautomationpractice.blogspot.com/
+
+driver = webdriver.Chrome(executable_path="C:\Drivers\chromedriver_win32\chromedriver.exe")
+
+driver.get("https://www.facebook.com/")
+
+# Note:
+
+# It will give this error if do not import service and work with service
+
+# C:\Users\Titan Tech-2\PycharmProjects\SeleniumWithPython\MultiBrowser.py:8:
+# DeprecationWarning: executable_path has been deprecated, please pass in a Service object
+#   driver = webdriver.Chrome(executable_path="C:\Drivers\chromedriver_win32\chromedriver.exe")
+
+# Solution:
+# s = Service('C:\Drivers\chromedriver_win32\chromedriver.exe')
+# driver = webdriver.Chrome(service=s)
+
+############## Packages ################
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+import time
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support.ui import Select
+
+
+    print(driver.title) # Title of the page
+    print(driver.current_url) # returns the url of the page
+    print(driver.page_source) #HTML
+    driver.close()  # Close the one tab of a browser
+    driver.quit()   # close the total browser
+# How to provide value into input boxes
+    driver.find_element(By.ID, "RESULT_TextField-1").send_keys("Mustain")
+    driver.maximize_window() # Make the browser window full
+    driver.find_element_by_name("email")
+    print(driver.is_displayed()) # returns true/false based of element status
+    print(driver.is_enabled()) # returns true/false
+    print(driver.is_selected()) # return true/false status
+    driver.find_element_by_css_selector("input[value=roundtrip]") # Here, input is css tag and value=roundtrip is css selector
+
+# Implicitly Wait
+    * applicable for all the elements of the page
+    * specify one time in the begining of the code
+    Code:
+    driver.implicitly_wait(10)
+
+# Explicit waits
+    * based on the condition
+    # waits maximum 10 sec if elements not found. If found then without waiting go next
+    Code:
+    wait = WebDriverWait(driver, 10)
+    element = wait.until(EC.element_to_be_clickable(By.XPATH, ""))
+    element.click()
+
+# Dropdown
+    from selenium.webdriver.support.ui import Select
+    element = driver.find_element_by_id("RESULT_RadioButton-9")
+    drp = Select(element)
+   # ----- select one option (3 methods)-----
+    # Select by visible text
+    drp.select_by_visible_text("Morning") # Morning
+    # # Select by index
+    # drp.select_by_index(2) # Afternoon
+    # # select by value
+    # drp.select_by_value("Radio-2") # Evening
+   # --------Count number of options----------
+    print(len(drp.options))
+   # ------ Capture all the options and print them as output ----------
+    all_options = drp.options
+    for option in all_options:
+        print(option.text)
+
