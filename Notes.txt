@@ -71,3 +71,9 @@ from selenium.webdriver.support.ui import Select
     for option in all_options:
         print(option.text)
 
+
+######### Data Driven testing ################
+# Excel operations
+    * Reading data from Excel file
+    * Writing data from Excel file
+    * Data driven test case
