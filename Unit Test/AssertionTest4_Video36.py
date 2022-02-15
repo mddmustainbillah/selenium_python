@@ -1,12 +1,12 @@
 ######## assertIn & assertNotIn ##########
 
 #### assertIn
-# assertIn method verifies whether the  element is present in the list/tuple/set/dictionary, if
-# element is present in list/tuple/set/dictionary then test is passed otherwise test is failed.
+# assertIn method verifies whether the first element is present in the second element, if
+# first element is present in second element then test is passed otherwise test is failed.
 #
 ##### assertNotIn
-# assertNotIn method verifies whether the element is not present in the list/tuple/set/dictionary
-# or not, if element is present then test will be failed otherwise test is passed.
+# assertNotIn method verifies whether the first element is not present in the second element
+# or not, if first element is present then test will be failed otherwise test is passed.
 #
 # This two methods will be helpful when you want to verify presence of a value
 # in a list, tuple, set and dictionary.
