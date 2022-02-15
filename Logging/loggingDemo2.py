@@ -13,12 +13,16 @@
 
 import logging
 
-logging.basicConfig(filename="test1.log", format='%(asctime)s: %(levelname)s: %(message)s',
+logging.basicConfig(filename="test2.log", format='%(asctime)s: %(levelname)s: %(message)s',
                     datefmt='%m/%d/%y %I:%M:%S %p', level=logging.DEBUG)
 
-logging.debug("This is debug message")
-logging.info("This is info message")
-logging.warning("This is warning message")
-logging.error("This is error message")
-logging.critical("This is critical message")
+# Creating logger object   ( the best way)
 
+logger = logging.getLogger()
+logger.setLevel(logging.DEBUG)
+
+logger.debug("This is debug message")
+logger.info("This is info message")
+logger.warning("This is warning message")
+logger.error("This is error message")
+logger.critical("This is critical message")
