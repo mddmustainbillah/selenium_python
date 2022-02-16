@@ -16,4 +16,5 @@ sanityTestSuite = unittest.TestSuite([tc1, tc2])  # Sanity test suite
 functionalTestSuite = unittest.TestSuite([tc3, tc4])  # functional test suite
 masterTestSuite = unittest.TestSuite([tc1, tc2, tc3, tc4])  # master test suite (returns all)
 
-unittest.TextTestRunner().run(sanityTestSuite)
+unittest.TextTestRunner(verbosity=2).run(sanityTestSuite) # verbosity give logs details in console window.
+
