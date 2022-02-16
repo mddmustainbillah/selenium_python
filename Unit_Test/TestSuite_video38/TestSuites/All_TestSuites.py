@@ -1,9 +1,9 @@
 import unittest
-from Package1.TC_LoginTest import LoginTest
-from Package1.TC_SignupTest import SignupTest
+from Unit_Test.TestSuite_video38.Package1.TC_LoginTest import LoginTest
+from Unit_Test.TestSuite_video38.Package1.TC_SignupTest import SignupTest
 
-from Package2.TC_PaymentTest import PaymentTest
-from Package2.TC_PaymentReturns import PaymentReturnsTest
+from Unit_Test.TestSuite_video38.Package2.TC_PaymentTest import PaymentTest
+from Unit_Test.TestSuite_video38.Package2.TC_PaymentReturns import PaymentReturnsTest
 
 # Get all tests from LoginTest, SignupTest, PaymentTest and PaymentReturnsTest
 tc1 = unittest.TestLoader().loadTestsFromTestCase(LoginTest)
