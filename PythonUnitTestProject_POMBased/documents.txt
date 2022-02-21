@@ -1,0 +1,20 @@
+Small Project: selenium, Unit Test, PageObject Model, HTML Reports
+
+UnittestPOMBasedProject
+
+    Drivers
+        |
+    pageObjects
+        |
+    TestCases
+        |
+    Reports
+
+Test Case:
+---------
+1) Launch chrome browser
+2) open url: http://admin-demo.nopcommerce.com/
+3) provide user: admin@yourstore.com
+4) provide password: admin
+5) click on login
+6) expected title: Dashboard / nopCommerce administration
