@@ -1,0 +1,58 @@
+Database
+SQL
+SQL Commands
+Database Components(Client & Server)
+
+Install cx_Oracle Module
+Database Connectivity using Python cx_Oracle Module
+Operations on Database Tables
+Data Driven Testing using Database as source
+----------------------------------------------------
+
+Database is storage area where data will be stored.
+Ex: Oracle, Ms-sqlserver, DB2, TERADATA etc.
+
+SQL -> is a language by which we can communicate with the databases.
+
+SQL Commands--->
+-------------------
+DDL --> create, alter, drop
+DML --> Insert, update, delete
+DRL --> Select
+DCL --> grant, revoke
+TCL --> commit, savepoint
+
+oracle----> SQLPlus(CLI), SQLDeveloper(GUI)
+            Toad
+            Aquadata studio
+            SquirrelSQL
+            etc.
+
+Connection details:
+-------------------------
+server IP/name
+port no
+username/password
+servicename/id/databasename
+
+Pre-requisites
+----------------------------
+1) Oracle data base installation
+2) Oracle instant client installation
+3) cx_Oracle installation through cmd
+        Command should execute in command prompt: pip install cx-Oracle
+4) cx_Oracle installation in Pycharm interpreter
+
+
+Oracle instant client
+---------------------------------
+http://www.oracle.com/technetwork/database/database-technologies/instant-client/downloads/index.html
+Download zip file then extract, keep it in some folder and the path to properties
+
+
+Database operations using Python(cx_Oracle Module)
+--------------------------------------------------
+1) Connect to database
+2) How to execute queries(insert, update, delete)
+3) How to select data from database
+4) Datadriven testing
