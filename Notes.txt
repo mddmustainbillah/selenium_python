@@ -25,6 +25,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support.ui import Select
 import logging
 import unittest
+from selenium.webdriver import ActionChains
 
 
     print(driver.title) # Title of the page
@@ -40,11 +41,61 @@ import unittest
     print(driver.is_enabled()) # returns true/false
     print(driver.is_selected()) # return true/false status
     driver.find_element_by_css_selector("input[value=roundtrip]") # Here, input is css tag and value=roundtrip is css selector
+# Taking screenshot
+    driver.save_screenshot("C:/Users/Titan Tech-2/PycharmProjects/SeleniumWithPython/output/google.png")
+    driver.get_screenshot_as_file("C:/Users/Titan Tech-2/PycharmProjects/SeleniumWithPython/output/google2.png")
+    # Note: png, jpg, jpeg etc any extension applicable
+# Capture all the cookies created by browser
+    cookies = driver.get_cookies()
+# Adding new cookie to the browser
+    cookie = {'name':'Mycookie', 'value': '12335364642'}
+    driver.add_cookie(cookie)
+# Deleting cookie
+    driver.delete_cookie("Mycookie")
+# Deleting all the cookie
+    driver.delete_all_cookies() # deletes all cookies
+# Double click on the button
+    actions = ActionChains(driver)
+    actions.double_click(element).perform()
+# Code for preventing popup window in firefox while downloading
+    fp.set_preference("browser.helperApps.neverAsk.saveToDisk", "text/plain, application/pdf")  # Mime type
+    fp.set_preference("browser.download.manager.showWhenStarting", False)
+    fp.set_preference("browser.download.dir", "C:\Users\Titan Tech-2\Downloads")
+    fp.set_preference("browser.download.folderList", 2)
+    fp.set_preference("pdfjs.disabled", True)
+# Drag and Drop file
+    actions = ActionChains(driver)
+    actions.drag_and_drop(source_element, target_element).perform() # Drag and Drop
+# Upload file
+    driver.find_element_by_xpath("//*[@id='RESULT_FileUpload-10']").send_keys("C:/Users/Titan Tech-2/Pictures/flower.jpg")
+# How to find out how many input-boxes present in web page
+    input-boxes = driver.find_elements(By.CLASS_NAME, "text_field")
+    print(len(input-boxes))   # 6
+# Mouse hover operation
+    actions = ActionChains(driver)
+    actions.move_to_element(admin).move_to_element(usermgnt).move_to_element(users).click().perform()
+# Mouse Right Click action
+    actions = ActionChains(driver)
+    actions.context_click(element).perform() # Mouse Right click action
+# Navigation
+    driver.back() # move to the previous page
+    driver.forward() # move to the next page
+# Alert window
+    driver.switch_to_alert().accept() # closes alert window using "OK" button
+    driver.switch_to_alert().dismiss() # closes alert window using  "No" button
+# Clicking on the link (2 methods)
+    # method - 1
+    driver.find_element(By.LINK_TEXT, "Developers").click() # name have to be 100% correct
+    # method - 2
+    driver.find_element(By.PARTIAL_LINK_TEXT, "Develop").click() # name have to be 100% correct
+
+
+
+
 
 # Implicitly Wait
     * applicable for all the elements of the page
-    * specify one time in the begining of the code
-    Code:
+    * specify one time in the beginning of the code
     driver.implicitly_wait(10)
 
 # Explicit waits
